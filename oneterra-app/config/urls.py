@@ -21,13 +21,13 @@ from API.views import UserViewSet, GroupViewSet
 from reactApp.views import react_app
 
 
-
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'users', UserViewSet)
+# router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
-    path('', react_app),
-    path('api/v1/', include(router.urls)),
+    path('api/v1/app/', include('reactApp.urls')),
+    # path('', react_app),
+    # path('api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
